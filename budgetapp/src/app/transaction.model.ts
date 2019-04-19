@@ -6,5 +6,4 @@ export class Transaction {
   transactionType: string;
   transactionDt: string;
   amount: number;
-
 }
