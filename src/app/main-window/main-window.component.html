@@ -1,12 +1,15 @@
-<div class="bg-light shadow text-center pt-3 pb-3">
-    <div class="accounts">
-        <table>
-            <td>
-                <app-accounts userId={{userId}}></app-accounts>
-            </td>
-            <td>
-                <app-transaction-list></app-transaction-list>
-            </td>
-        </table>
+<div>
+  <div class="container-fluid">
+    <div class="row" >
+      <div class="col-sm-3">
+        <app-accounts userId={{userId}}></app-accounts>
+      </div>
+      <div class="col-lg-6">
+        <app-transaction-list></app-transaction-list>
+      </div>
+      <div class="col-sm-3">
+        <app-transaction (reloadComponents)="reload($event)"></app-transaction>
+      </div>
     </div>
+  </div>
 </div>
