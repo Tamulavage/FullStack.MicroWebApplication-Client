@@ -6,7 +6,8 @@ import {Account} from '../account';
 import {TransactionService} from '../transaction.service';
 
 import {Transactiontype} from '../transactiontype';
-import {delay} from "rxjs/operators";
+import {delay} from 'rxjs/operators';
+
 
 const resetFromForm = 'Select From :';
 const resetToForm = 'Select To :';
@@ -111,12 +112,12 @@ export class TransactionComponent implements OnInit {
         const doSomething = async () => {
             await sleep(500);
             this.refreshData();
-        }
+        };
         doSomething();
     }
 
     refreshData(): string {
-        this.reloadComponents.emit("newData");
+        this.reloadComponents.emit('newData');
         return;
     }
 

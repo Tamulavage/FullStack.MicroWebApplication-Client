@@ -3,5 +3,6 @@ export class Profile {
   firstName: string;
   lastName: string;
   userName: string;
+  // nickname: string;
 }
 

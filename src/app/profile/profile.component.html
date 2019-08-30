@@ -1,0 +1,5 @@
+<pre *ngIf="auth.userProfile$ | async as profile">
+  <!-- <code>{{ profile | json }}</code> -->
+    <a   routerLink="/mainwindow/{{dbProf.id}}">{{profile.nickname}}</a>
+</pre>
+

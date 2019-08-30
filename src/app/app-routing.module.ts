@@ -7,6 +7,8 @@ import {TransactionListComponent} from './transaction-list/transaction-list.comp
 import {NgxChartsComponent} from './ngxcharts/ngxcharts.component';
 import {MainWindowComponent} from './main-window/main-window.component';
 import {AppComponent} from './app.component';
+import { CallbackComponent } from './callback/callback.component';
+import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
   {path: 'profiles', component: UserComponent},
@@ -18,7 +20,9 @@ const routes: Routes = [
   {path: 'mainwindow/:id', component: MainWindowComponent,
     runGuardsAndResolvers: 'always'},
   {path: 'transactions', component: TransactionListComponent},
-  {path: 'transactions:/id', component: TransactionListComponent}
+  {path: 'transactions:/id', component: TransactionListComponent},
+  {path: 'profile', component: ProfileComponent},
+  {path: 'callback', component: CallbackComponent}
 ];
 
 @NgModule({
