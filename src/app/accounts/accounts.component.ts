@@ -26,7 +26,6 @@ export class AccountsComponent implements OnInit {
 
     ngOnInit() {
         // this.userId = +this.route.snapshot.paramMap.get('id');
-        console.log('init called');
         this.getAccounts();
         this.accountTypeName = 'Type';
         this.accountService.getAccountTypes().subscribe(accountType => this.accountTypes = accountType);

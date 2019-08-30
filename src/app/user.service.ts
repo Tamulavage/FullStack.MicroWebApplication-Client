@@ -14,7 +14,7 @@ const httpOptions = {
 })
 export class UserService {
   // private userUrl = 'https://budgetapp-server.herokuapp.com/budget/profile';
-   private userUrl = 'http://localhost:8080/budget/profile'
+  private userUrl = 'http://localhost:8080/budget/profile';
   private log(message: string) {
     this.messageService.add(`ProfileService: ${message}`);
   }
@@ -45,6 +45,15 @@ export class UserService {
         catchError(this.handleError<Profile>(`getUser id=${id}`))
       );
   }
+  getUserByUsername(username: string): Observable<Profile> {
+    const url = `${this.userUrl}/find/${username}`;
+    return this.http.get<Profile>(url)
+      .pipe(
+        tap(_ => this.log(`fetched profile id=${username}`)),
+        catchError(this.handleError<Profile>(`username=${username}`))
+      );
+  }
+
   searchUsers(term: string): Observable<Profile[]> {
     if (!term.trim()) {
       return of([]);
